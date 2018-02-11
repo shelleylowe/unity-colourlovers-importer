@@ -1,0 +1,14 @@
+
+*.csproj
+.vs/unity-colourlovers-importer/v15/.suo
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
+Library/
+Temp/
+ProjectSettings/
+*.sln
+UnityPackageManager/
+QAReport.md
+obj/Debug/
