@@ -1,7 +1,7 @@
 # Unity ColourLovers Importer
 
-A simple editor tool to search and load colours and palettes directly from [COLOURlovers](www.colourlovers.com). 
-Hooks into the COLOURlovers API documented [here](www.colourlovers.com/api).
+A simple editor tool to search and load colours and palettes directly from [COLOURlovers](http://www.colourlovers.com). 
+Hooks into the COLOURlovers API documented [here](http://www.colourlovers.com/api).
 
 There are options to edit and save the palettes returned. Saving a colour palette will create an asset in the Assets/Editor folder. Unfortunately Unity doesn't expose the ColorPresetLibrary so the preset assets are generated based on a text asset (ITS SO BAD BUT HEY IT WORKS). 
 
