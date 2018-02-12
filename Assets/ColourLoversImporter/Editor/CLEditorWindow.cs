@@ -14,7 +14,7 @@
         private List<CLPaletteInfo> _palettes = new List<CLPaletteInfo>();
         private List<CLColorInfo> _colors = new List<CLColorInfo>();
 
-        private string _searchKeywords;
+        private string _searchKeywords = "";
         private Vector2 _scrollPos;
 
         private string _colorPresetLibraryTemplate;
@@ -129,7 +129,11 @@
                 GUILayout.BeginHorizontal();
                 for (int i = 0; i < p.Colors.Count; i++)
                 {
+#if UNITY_2018
                     p.Colors[i] = EditorGUILayout.ColorField(new GUIContent(""), p.Colors[i], false, true, false, GUILayout.Width(30));
+#else
+                    p.Colors[i] = EditorGUILayout.ColorField(new GUIContent(""), p.Colors[i], false, true, false, null, GUILayout.Width(30));
+#endif
                 }
                 GUILayout.EndHorizontal();
 
@@ -162,7 +166,11 @@
                 GUILayout.EndHorizontal();
                 GUILayout.Space(5);
 
+#if UNITY_2018
                 EditorGUILayout.ColorField(new GUIContent(""), c.Color, false, true, false, GUILayout.MaxWidth(600));
+#else
+                EditorGUILayout.ColorField(new GUIContent(""), c.Color, false, true, false, null, GUILayout.MaxWidth(600));
+#endif
 
                 GUILayout.Space(20);
             }
