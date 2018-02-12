@@ -7,6 +7,10 @@ There are options to edit and save the palettes returned. Unfortunately Unity do
 
 Hopefully this is a handy little tool for prototyping/creating placeholder UI to give you easy access to nice colour combinations instead of using default/random colours.
 
+Tested on Unity 5.6, 2017 and 2018 and seems to work correctly.
+
+#### Download unity package directly [here](http://shelleylowe.com/unity-colourlovers-importer/unity-colourlovers-importer.unitypackage).
+
 ### Demo
 
 ![demo](http://shelleylowe.com/unity-colourlovers-importer/Example.gif)
