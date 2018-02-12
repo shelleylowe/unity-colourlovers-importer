@@ -7,6 +7,8 @@ There are options to edit and save the palettes returned. Saving a colour palett
 
 Hopefully this is a handy little tool for prototyping/creating placeholder assets or UI to give you easy access to nice colour combinations instead of using default/random colours.
 
+Open importer under Window > ColourLovers Importer
+
 Tested on Unity 5.6, 2017 and 2018 and seems to work correctly.
 
 #### Download unity package directly [here](http://shelleylowe.com/unity-colourlovers-importer/unity-colourlovers-importer.unitypackage).
