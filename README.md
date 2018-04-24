@@ -11,14 +11,14 @@ Open importer under Window > ColourLovers Importer
 
 Tested on Unity 5.6, 2017 and 2018 and seems to work correctly.
 
-#### Download unity package directly [here](http://shelleylowe.com/unity-colourlovers-importer/unity-colourlovers-importer.unitypackage).
+#### Link to download unity package available [here](http://shelleylowe.com/unity-colourlovers-importer/).
 
 ### Demo
 
-![demo](http://shelleylowe.com/unity-colourlovers-importer/Example.gif)
+![demo](http://shelleylowe.com/unity-colourlovers-importer/img/Example.gif)
 
-![presets](http://shelleylowe.com/unity-colourlovers-importer/SavedPresets.png)
+![presets](http://shelleylowe.com/unity-colourlovers-importer/img/SavedPresets.png)
 
 Options for loading the latest/top/random palettes and colours
 
-![palettes](http://shelleylowe.com/unity-colourlovers-importer/Palettes.png) ![colours](http://shelleylowe.com/unity-colourlovers-importer/Colours.png)
+![results](http://shelleylowe.com/unity-colourlovers-importer/img/Results.png)
