@@ -129,7 +129,7 @@
                 GUILayout.BeginHorizontal();
                 for (int i = 0; i < p.Colors.Count; i++)
                 {
-#if UNITY_2018
+#if UNITY_2018_1_OR_NEWER
                     p.Colors[i] = EditorGUILayout.ColorField(new GUIContent(""), p.Colors[i], false, true, false, GUILayout.Width(30));
 #else
                     p.Colors[i] = EditorGUILayout.ColorField(new GUIContent(""), p.Colors[i], false, true, false, null, GUILayout.Width(30));
@@ -166,7 +166,7 @@
                 GUILayout.EndHorizontal();
                 GUILayout.Space(5);
 
-#if UNITY_2018
+#if UNITY_2018_1_OR_NEWER
                 EditorGUILayout.ColorField(new GUIContent(""), c.Color, false, true, false, GUILayout.MaxWidth(600));
 #else
                 EditorGUILayout.ColorField(new GUIContent(""), c.Color, false, true, false, null, GUILayout.MaxWidth(600));
@@ -188,15 +188,26 @@
             _palettes.Clear();
 
             var request = string.Format(PALETTES_API, apiType);
-            var www = new WWW(request);
 
+#if UNITY_2019_1_OR_NEWER
+            var www = UnityEngine.Networking.UnityWebRequest.Get(request);
+            www.SendWebRequest();
+#else
+            var www = new WWW(request);
+#endif
             ContinuationManager.Add(() => www.isDone, () =>
             {
                 if (!string.IsNullOrEmpty(www.error)) Debug.Log("WWW failed: " + www.error);
                 //Debug.Log(www.text);
 
                 var serializer = new XmlSerializer(typeof(CLPalettes));
+
+#if UNITY_2019_1_OR_NEWER
+                var result = serializer.Deserialize(new StringReader(www.downloadHandler.text)) as CLPalettes;
+#else
                 var result = serializer.Deserialize(new StringReader(www.text)) as CLPalettes;
+#endif
+                www.Dispose();
 
                 foreach (var p in result.Palettes)
                 {
@@ -214,7 +225,13 @@
             _colors.Clear();
 
             var request = string.Format(COLORS_API, apiType);
+
+#if UNITY_2019_1_OR_NEWER
+            var www = UnityEngine.Networking.UnityWebRequest.Get(request);
+            www.SendWebRequest();
+#else
             var www = new WWW(request);
+#endif
 
             ContinuationManager.Add(() => www.isDone, () =>
             {
@@ -222,7 +239,13 @@
                 //Debug.Log(www.text);
 
                 var serializer = new XmlSerializer(typeof(CLColors));
+
+#if UNITY_2019_1_OR_NEWER
+                var result = serializer.Deserialize(new StringReader(www.downloadHandler.text)) as CLColors;
+#else
                 var result = serializer.Deserialize(new StringReader(www.text)) as CLColors;
+#endif
+                www.Dispose();
 
                 foreach (var c in result.Colors)
                 {
